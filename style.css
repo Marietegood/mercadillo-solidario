@@ -504,7 +504,14 @@ footer {
 /* =========================================
    DISEÑO MÓVIL: MENÚ COMO ETIQUETAS (FILTROS APP)
    ========================================= */
-@media screen and (max-width: 768px) {
+button.btn-menu {
+    display: none !important; /* Hace que desaparezca por completo en el PC */
+    background: transparent !important; /* Le quita el color verde */
+    width: auto !important; /* Evita que ocupe toda la pantalla */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+   @media screen and (max-width: 768px) {
     
     /* 1. Usamos Flexbox en la página entera para reordenar los bloques */
     body {
