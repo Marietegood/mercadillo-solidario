@@ -219,7 +219,7 @@ button:hover { background-color: #04a866; }
 footer {
     /* Le ponemos un filtro oscuro para que las letras blancas se sigan leyendo perfectas */
     background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
-                url('fts/Logo.png/');
+                url('fts/Logo.png');
     background-size: cover;
     background-position: center;
     color: var(--color-blanco);
@@ -499,4 +499,101 @@ footer {
 /* LA MAGIA: Esta clase la usará JavaScript para hacer desaparecer las tarjetas */
 .oculto {
     display: none !important;
+}
+
+/* =========================================
+   ADAPTACIÓN EXCLUSIVA PARA MÓVILES
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Cabecera ultra-compacta */
+    header {
+        flex-direction: column !important;
+        padding: 0.5rem 0 !important; 
+        gap: 0.5rem !important; 
+    }
+
+    .logo {
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .logo img {
+        height: 35px !important; /* Hacemos el logo más pequeñito */
+    }
+
+    /* 2. Menú en una sola línea deslizable y fino */
+    nav {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 1rem !important; /* Menos espacio entre palabras */
+        padding: 0 1rem 10px 1rem !important;
+        margin-right: 0 !important;
+        scrollbar-width: none; 
+        -webkit-overflow-scrolling: touch;
+    }
+    nav::-webkit-scrollbar { display: none; }
+
+    /* 3. Letras del menú tamaño móvil */
+    nav a {
+        flex-shrink: 0 !important;
+        font-size: 0.85rem !important; /* Letra mucho más fina y elegante */
+    }
+
+    /* 4. Carrito en modo "Burbuja" */
+    .texto-carrito {
+        display: none !important;
+    }
+
+    nav a.btn-carrito {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 35px !important;
+        height: 35px !important;
+        border-radius: 50% !important; /* Círculo perfecto */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* 5. Cuadrícula de 2 productos perfecta */
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important; /* Menos hueco entre tarjetas */
+        padding: 0 0.5rem !important;
+    }
+
+    .tarjeta {
+        padding: 0.5rem !important; /* Tarjetas más recogidas */
+    }
+
+    .contenedor-imagen {
+        height: 100px !important; /* Fotos adaptadas al móvil */
+        margin-bottom: 0.5rem !important;
+    }
+
+    .tarjeta h3 {
+        font-size: 0.8rem !important; /* Títulos pequeños */
+        margin: 0.2rem 0 !important;
+    }
+
+    /* Ocultamos la descripción en móvil para igualar las tarjetas */
+    .tarjeta p {
+        display: none !important; 
+    }
+
+    .tarjeta .precio {
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem !important;
+        padding-top: 0.2rem !important;
+    }
+
+    .tarjeta button {
+        padding: 0.4rem !important;
+        font-size: 0.75rem !important; /* Botón más estrecho */
+        margin-top: auto !important;
+    }
 }
