@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Carrito - Mercadillo Benéfico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+                <img src="fts/Logo.png" alt="Logo de la Empresa">
+            </a>
+    </header>
+
+<div class="contenedor-carrito">
+    <h2>Tu Carrito de la Compra</h2>
+    
+    <div id="lista-carrito"></div>
+
+    <form class="formulario-reserva" id="form-pedido" onsubmit="guardarSeleccion(event)">
+        <h3>Datos para la reserva</h3>
+        
+        <input type="text" id="nombre" placeholder="Tu Nombre" required>
+        <input type="text" id="apellidos" placeholder="Tus Apellidos" required>
+        
+<div class="seccion-email">
+    <label class="opcion-email">
+        <input type="checkbox" id="check-email" onchange="toggleEmail()"> 
+        <span>Si desea recibir el ticket por correo, marque aquí</span>
+    </label>
+
+    <div id="contenedor-email" style="display: none; margin-top: 10px;">
+        <input type="email" id="email" placeholder="Introduce tu correo electrónico">
+    </div>
+</div>
+        <button type="submit" id="btn-enviar-pedido">GUARDAR SELECCIÓN</button>
+    </form>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

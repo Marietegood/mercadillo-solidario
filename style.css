@@ -1,0 +1,502 @@
+/* Esto evita que la página se salga por los lados */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #006A36;
+    --color-secundario: #10b981;
+    --color-fondo: #f8fafc;
+    --color-texto: #1e293b;
+    --color-blanco: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0; padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+header {
+    background-color: var(--color-blanco);
+    padding: 1rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.5rem; font-weight: bold;
+    color: var(--color-primario); text-decoration: none;
+}
+
+/* --- CONTENEDOR DEL MENÚ --- */
+/* --- CONTENEDOR DEL MENÚ --- */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Espacio ideal entre las palabras */
+    margin-right: 1.5rem; /* Lo empujamos un poco a la izquierda */
+    flex-wrap: wrap; /* Para que no se rompa en pantallas pequeñas */
+}
+
+/* --- ESTILO DE LOS ENLACES --- */
+nav a {
+    text-decoration: none; /* ¡Adiós al subrayado feo por defecto! */
+    color: var(--color-texto); /* Color oscuro elegante */
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative; /* Necesario para la animación */
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por encima del texto */
+nav a:hover {
+    color: var(--color-primario);
+}
+
+/* LA ANIMACIÓN PRO: La rayita que aparece por debajo */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primario);
+    transition: width 0.3s ease; /* Movimiento suave */
+}
+
+nav a:hover::after {
+    width: 100%; /* La línea crece al pasar el ratón */
+}
+
+/* --- AISLAR EL BOTÓN DEL CARRITO --- */
+nav a.btn-carrito {
+    margin-left: 2rem; /* Empujón extra a la derecha para separarlo del resto */
+    color: var(--color-primario); /* Le ponemos tu verde para que destaque un poco más */
+}
+
+/* Le quitamos la rayita de abajo al carrito para que quede como un botón independiente */
+nav a.btn-carrito::after {
+    display: none; 
+}
+
+.btn-carrito {
+    background-color: var(--color-secundario); color: white;
+    padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold;
+}
+
+/* --- ESTILO GENERAL PARA LAS SECCIONES --- */
+section {
+    /* Añadimos un buen relleno arriba y abajo para que cada sección respire */
+    padding: 4rem 5%; 
+    /* Un truco pro: alternar colores de fondo muy sutiles para separar secciones visualmente */
+    background-color: var(--color-blanco);
+}
+
+/* Si quieres que las secciones pares (2, 4, 6...) tengan un fondo gris muy clarito para diferenciar, descomenta esto: */
+/*
+section:nth-child(even) {
+   background-color: #f8fafc; 
+}
+*/
+
+/* --- TÍTULOS DE SECCIÓN (IMPRESORAS, PCS, ETC.) --- */
+section h2 {
+    text-align: center; /* Lo centramos */
+    font-size: 2.5rem; /* Un poco más grande e imponente */
+    font-weight: 800; /* Muy negrita */
+    text-transform: uppercase; /* Aseguramos mayúsculas */
+    letter-spacing: 2px; /* Un poquito de aire entre letras, queda muy pro */
+    color: var(--color-texto);
+    
+    position: relative; /* Necesario para poder dibujar la línea */
+    padding-bottom: 1.5rem; /* Espacio entre el texto y la línea */
+    margin-bottom: 4rem; /* Espacio entre la línea y los productos */
+    
+    /* IMPORTANTE: Si tenías algún 'border-bottom' antiguo, esto lo quita */
+    border: none; 
+}
+
+/* --- LA LÍNEA VERDE DEGRADADA A TODA PANTALLA --- */
+section h2::after {
+    content: ''; /* Elemento vacío necesario para dibujar */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 3px; /* El grosor de la línea */
+    
+    /* LA MAGIA: Un degradado que va de transparente a tu verde y vuelve a transparente */
+    background: linear-gradient(
+        to right, 
+        transparent 0%, 
+        var(--color-primario) 20%, 
+        var(--color-primario) 80%, 
+        transparent 100%
+    );
+    
+    /* Si prefieres la línea sólida de borde a borde sin degradado, borra lo de arriba y usa esto: */
+    /* background-color: var(--color-primario); */
+}
+
+/* --- CUADRÍCULA UNIFICADA PARA TODA LA TIENDA --- */
+.grid-productos {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 3rem; 
+    /* ¡AQUÍ ESTÁ LA MAGIA! Cambiamos 'start' por 'center' */
+    justify-content: center; 
+    width: 100%; 
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    border-radius: 12px; /* Bordes un pelín más redondeados, queda más moderno */
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra muy sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Para que la animación sea suave */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* El efecto mágico al pasar el ratón por encima del producto */
+.tarjeta:hover {
+    transform: translateY(-8px); /* La tarjeta "flota" hacia arriba */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /* La sombra se hace más grande */
+}    
+
+.precio { font-size: 1.4rem; font-weight: bold; color: var(--color-secundario); display: block; margin-bottom: 1rem; }
+
+/* Esto empuja el precio (y al botón que tiene debajo) hasta el final de la tarjeta */
+.tarjeta .precio {
+    margin-top: auto; 
+    padding-top: 1rem; /* Un pelín de aire por arriba para que no se pegue al texto */
+}
+
+button {
+    background-color: var(--color-primario); color: white;
+    padding: 0.6rem 1.2rem; border: none; border-radius: 6px;
+    cursor: pointer; font-weight: bold; width: 100%;
+}
+button:hover { background-color: #04a866; }
+
+/* Estilo para los botones dentro de las tarjetas */
+.tarjeta button {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 8px; /* Opcional: si lo prefieres redondo tipo píldora, pon 25px */
+    padding: 0.5rem 1.0rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto al pasar el ratón por el botón */
+.tarjeta button:hover {
+    background-color: #004d26; /* Un verde un poco más oscuro (cámbialo si tu primario es diferente) */
+    transform: scale(1.02); /* El botón crece un 2% para decir "¡Púlsame!" */
+}
+
+/* Efecto al hacer clic en el botón */
+.tarjeta button:active {
+    transform: scale(0.95); /* Se hunde ligeramente al hacer clic */
+}
+
+/* Pie de página */
+footer {
+    /* Le ponemos un filtro oscuro para que las letras blancas se sigan leyendo perfectas */
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                url('fts/Logo.png/');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+/* Estilos específicos para el carrito */
+.contenedor-carrito { max-width: 800px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 12px; }
+.item-carrito { display: flex; justify-content: space-between; border-bottom: 1px solid #ccc; padding: 1rem 0; }
+.formulario-reserva { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.formulario-reserva input { padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+
+/* Estilos para las imágenes de los productos */
+/* Estilos para las imágenes de los productos */
+.contenedor-imagen {
+    width: 100%;
+    /* Subimos la altura a 220px para que la foto se vea enorme y proporcional */
+    height: 220px; 
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: #f1f5f9; 
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Sigue en contain para que no se recorte NADA */
+    display: block;
+}
+/* Botones de eliminar en el carrito */
+.btn-eliminar {
+    background-color: #ef4444; /* Rojo */
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #dc2626;
+}
+
+.btn-vaciar {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.btn-vaciar:hover {
+    background-color: #dc2626;
+}
+
+/* Ajuste para que el texto y el botón queden alineados en el carrito*/
+.item-carrito {
+    display: flex;
+    align-items: center; 
+    border-bottom: 0.1px solid #ccc;
+    padding: 2rem -3px;
+}
+
+/* Contenedor del checkbox */
+.opcion-email {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.opcion-email:hover {
+    background-color: #f1f1f1;
+}
+
+.opcion-email input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+/* El campo de email con animación */
+#contenedor-email {
+    display: none;
+    margin-top: 10px;
+    animation: aparecerDespacio 0.4s ease-out;
+}
+
+@keyframes aparecerDespacio {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#email {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#email:focus {
+    border-color: #2ecc71; /* Color verde cuando pinchas */
+}
+
+/* Contenedor principal del formulario para que no ocupe toda la pantalla */
+.formulario-pedido {
+    max-width: 600px;
+    margin: 20px auto; /* Esto centra el bloque entero */
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Estilo del recuadro del Checkbox */
+.opcion-email {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.opcion-email:hover {
+    border-color: #2ecc71;
+    background-color: #f0fff4;
+}
+
+.opcion-email span {
+    font-size: 0.95rem;
+    color: #495057;
+    text-align: left;
+}
+
+/* El input de email ahora con mejor aspecto */
+#email {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Evita que se salga del borde */
+    transition: border-color 0.3s;
+}
+
+#email:focus {
+    border-color: #2ecc71;
+    outline: none;
+}
+
+/* --- EL SECRETO DEL DIFUMINADO BLANCO (ESTILO GRUPO APRENDER) --- */
+.hero-section {
+    width: 100%;
+    height: 450px; /* Altura generosa */
+    
+    /* LA MAGIA: Un degradado que va de BLANCO a la izquierda a TRANSPARENTE a la derecha */
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0) 75%),
+                url('fts/hinojosa.jpg'); /* OJO: PON AQUÍ TU FOTO DE LOS EQUIPOS */
+                
+    background-size: cover;
+    background-position: center right; /* Enfoca la foto hacia la derecha para que no la tape el texto */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Texto pegado a la izquierda */
+    padding: 0 5%; /* Mismo margen que tiene tu header */
+    border-bottom: 1px solid #eee;
+}
+
+.hero-contenido {
+    max-width: 500px; /* Evita que el texto invada la foto de la derecha */
+    text-align: left;
+}
+
+.hero-contenido h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    line-height: 1.1;
+    font-family: 'Georgia', serif; /* Tipo de letra más elegante para el título, como en la foto */
+}
+
+/* El color rojo/naranja de la foto (puedes cambiarlo por tu --color-primario si prefieres verde) */
+.hero-contenido h1 .destacado {
+    color: #006A36; 
+}
+
+.hero-contenido h1 .subtitulo {
+    color: #555;
+    font-size: 1.4rem;
+    font-family: 'Segoe UI', sans-serif; /* Vuelve a la fuente moderna */
+    font-weight: 500;
+    display: block;
+    margin-top: 8px;
+}
+
+.hero-contenido p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Retoque opcional al botón del carrito para que pegue con el diseño limpio */
+.btn-carrito {
+    background-color: #006A36; /* A juego con el título destacado */
+    color: white !important;
+    padding: 0.6rem 1.2rem; 
+    border-radius: 4px; 
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(230, 57, 70, 0.2);
+}
+.btn-carrito:hover {
+    background-color: #08ee83;
+    transform: translateY(-2px);
+    transition: all 0.3s;
+}
+
+
+.logo img {
+    height: 50px; /* Sube o baja este número para hacer el logo más grande o pequeño */
+    width: auto;
+    display: block;
+}
+
+/* --- ESTILOS PARA LOS FILTROS DE PCs --- */
+.filtros-pcs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap; /* Por si se ve en móvil, que no se salgan de la pantalla */
+}
+
+.btn-filtro {
+    background-color: #e2e8f0; /* Un gris clarito elegante por defecto */
+    color: var(--color-texto);
+    width: auto; /* Para que no ocupe el 100% como el de añadir al carrito */
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px; /* Bordes muy redondeados */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+/* El estilo del botón cuando está pulsado */
+.btn-filtro.activo {
+    background-color: var(--color-primario);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* LA MAGIA: Esta clase la usará JavaScript para hacer desaparecer las tarjetas */
+.oculto {
+    display: none !important;
+}

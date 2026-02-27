@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mercadillo Solidario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!----------------------------------     CABECERA     ------------------------------------------>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="fts/Logo.png" alt="Logo de la Empresa">
+        </a>            
+        <nav>
+            <a href="#pantallas">PANTALLAS</a>
+            <a href="#impresoras">IMPRESORAS</a>
+            <a href="#pcs">PCS</a>
+            <a href="#perifericos">PERIFÉRICOS</a>
+            <a href="#cableado">CABLEADO Y ADAPTADORES</a>
+            <a href="#tablets">TABLETS</a>
+            <a href="#averiado">AVERIADO</a>
+            <a href="#otros">OTROS</a>
+            <a href="carrito.html" target="_blank" class="btn-carrito">🛒 Ir al Carrito</a>
+        </nav>
+    </header>
+
+<!----------------------------------     SUBMENÚ     ------------------------------------------>
+    <section class="hero-section">
+        <div class="hero-contenido">
+            <h1>
+                <span class="destacado">Mercadillo</span><br>
+                <span class="destacado">Solidario</span><br>
+                <span class="subtitulo">Ayudanos a vaciar el almacén</span>
+            </h1>
+            <p>Participa en nuestro mercadillo benéfico, los productos que elijas serán sorteados entre las personas que lo hayan escogido</p>
+        </div>
+    </section>
+
+<!----------------------------------     PANTALLAS     ------------------------------------------>
+    <section id="pantallas">
+        <h2>PANTALLAS</h2>
+        <div class="grid-productos">
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pantallas/monitor 1.jfif" alt="Pantalla" >
+                </div>
+                <h3>Monitor HP 20"</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Monitor HP 20p', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pantallas/monitor 2.jfif" alt="Pantalla" >
+                </div>
+                <h3>Monitor acer V176L</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Monitor acer V176L', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pantallas/monitor 3.jfif" alt="Pantalla" >
+                </div>
+                <h3>Monitor Samsung SyncMaster 152v</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Monitor Samsung SyncMaster 152v', 45)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+<!----------------------------------     IMPRESORAS     ------------------------------------------>
+    <section id="impresoras">
+        <h2>IMPRESORAS</h2>
+        <div class="grid-productos"> 
+            
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 1.jfif" alt="impresora 1" >
+                </div>
+                <h3>Impresora HP LasarJet Pro MFP M225dw</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP LasarJet Pro MFP M225dw', 45)">Añadir al carrito</button>
+            </div>
+            
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 2.jfif" alt="impresora 2" >
+                </div>
+                <h3>Impresora HP Deskjet 1050</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP Deskjet 1050', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 3.jfif" alt="impresora 3" >
+                </div>
+                <h3>Impresora HP LaserJet Pro M404dw</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP LaserJet Pro M404dw', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 4.jfif" alt="impresora 4" >
+                </div>
+                <h3>Impresora HP Color LaserJet Pro M454dw</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP Color LaserJet Pro M454dw', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 5.jfif" alt="impresora 5" >
+                </div>
+                <h3>Impresora Kyocera FS-1300D</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora Kyocera FS-1300D', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 6.jfif" alt="impresora 6" >
+                </div>
+                <h3>Impresora HP LaserJet P2015dn</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP LaserJet P2015dn', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 7.jfif" alt="impresora 7" >
+                </div>
+                <h3>Impresora HP Officejet Pro8100</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP Officejet Pro8100', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/impresoras/impresora 8.jfif" alt="impresora 8" >
+                </div>
+                <h3>Impresora HP LaserJet Pro MFP M125nw</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Impresora HP LaserJet Pro MFP M125nw', 45)">Añadir al carrito</button>
+            </div>    
+        </div> 
+    </section>
+
+<!----------------------------------     ORDENADORES     ------------------------------------------>
+
+    <section id="pcs">
+        <h2>ORDENADORES</h2>
+        <div class="filtros-pcs">
+            <button class="btn-filtro activo" onclick="filtrarPCs('todos', this)">Todos</button>
+            <button class="btn-filtro" onclick="filtrarPCs('sobremesa', this)">Sobremesa</button>
+            <button class="btn-filtro" onclick="filtrarPCs('portatil', this)">Portátiles</button>
+        </div>
+
+<!----------------------------     SOBREMESAS     ------------------------------------>
+
+    <div class="grid-productos" id="grid-pcs">
+            <div class="tarjeta pc-sobremesa"> 
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 1.jfif" alt="sobremesa" >
+                </div>
+                <h3>Ordenador HP ProDesk i5 - Mini</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Mini Ordenador ProDesk', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 2.jfif" alt="sobremesa" >
+                </div>
+                <h3>Ordenador HP ProDesk i5 v1</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Ordenador HP ProDesk V1', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 3.jfif" alt="sobremesa" >
+                </div>
+                <h3>Ordenador HP Prodesk i5 v2</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Ordenador HP Prodesk v2', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 4.jfif" alt="sobremesa" >
+                </div>
+                <h3>Ordenador HP ProDesk 400 G2</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Ordenador HP ProDesk 400 G2', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 5.jfif" alt="sobremesa" >
+                </div>
+                <h3>Torre differo</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Torre Difero', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 6.jfif" alt="sobremesa" >
+                </div>
+                <h3>Ordenador HP pro i3 <br>(2 unidades)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Ordenador HP pro i3', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 7.jfif" alt="sobremesa" >
+                </div>
+                <h3>Ordenador HP Prodesk 400 i3</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Ordenador HP Prodesk 400 i3', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 8.jfif" alt="sobremesa" >
+                </div>
+                <h3>Torre DELL</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Torre DELL', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-sobremesa">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/sobremesa 9.jfif" alt="sobremesa" >
+                </div>
+                <h3>Semi torre differo i3</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Semi torre differo i3', 45)">Añadir al carrito</button>
+            </div>
+
+<!----------------------------     PORTÁTIL     ------------------------------------>
+
+    <div class="tarjeta pc-portatil">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/portatil 1.jfif" alt="portatil" >
+                </div>
+                <h3>Portátil ProBook i5 (1)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Portátil ProBook', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-portatil">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/portatil 2.jfif" alt="portatil" >
+                </div>
+                <h3>Portátil ProBook i5 (2)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Portátil ProBook', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-portatil">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/portatil 3.jfif" alt="portatil" >
+                </div>
+                <h3>Portátil ProBook i5 (3)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Portátil ProBook', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-portatil">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/portatil 4.jfif" alt="portatil" >
+                </div>
+                <h3>Portátil ProBook i5 (4)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Portátil ProBook', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-portatil">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/portatil 5.jfif" alt="portatil" >
+                </div>
+                <h3>Portátil ProBook i5 (5)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Portátil ProBook', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta pc-portatil">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/pcs/portatil 6.jfif" alt="portatil" >
+                </div>
+                <h3>Portátil ProBook i5 (6)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Portátil ProBook', 45)">Añadir al carrito</button>
+            </div>
+        </div> 
+    </section>
+
+<!----------------------------------     PERIFÉRICOS     ------------------------------------------>
+
+    <section id="perifericos">
+        <h2>PERIFÉRICOS</h2>
+        <div class="grid-productos"> 
+            
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/perifericos/TECLADO LOGITECH.jfif" alt="teclado" >
+                </div>
+                <h3>Teclado Logitech <br>(2 unidades)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Teclado Logitech', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/perifericos/TECLADO NORMAl.jfif" alt="teclado" >
+                </div>
+                <h3>Teclado DELL</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Teclado DELL', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/perifericos/TECLADO NORMAL 2.jfif" alt="teclado" >
+                </div>
+                <h3>Teclado Genius</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Teclado Genius', 45)">Añadir al carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+<!----------------------------------     CABLEADO Y ADAPTADORES     ------------------------------------------>
+    <section id="cableado">
+        <h2>CABLEADO Y ADAPTADORES</h2>
+        <div class="filtros-pcs">
+            <button class="btn-filtro activo" onclick="filtrarCables('todos', this)">Todos</button>
+            <button class="btn-filtro" onclick="filtrarCables('cable', this)">Cables</button>
+            <button class="btn-filtro" onclick="filtrarCables('adaptador', this)">Adaptadores</button>
+        </div>
+
+<!----------------------------     CABLEADO     ------------------------------------>
+
+    <div class="grid-productos" id="grid-cableado">
+            
+            <div class="tarjeta item-cable">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/CABLE HDMI.jfif" alt="Cable" >
+                </div>
+                <h3>Cable HDMI <br>(5 unidades)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Cable HDMI', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta item-cable">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/CABLE VGA.jfif" alt="Cable" >
+                </div>
+                <h3>Cable VGA <br>(10 unidades)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Cable VGA', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta item-cable">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/CABLEADO IMPRESORA.jfif" alt="Cable" >
+                </div>
+                <h3>Cable USB de Impresora</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Cable USB de Impresora', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta item-cable">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/RARO A RJ45 ADAPTADOR.jfif" alt="Adaptador" >
+                </div>
+                <h3>Cable de Consola</h3>
+                <p>Cable RJ45 a Serie para equipos de red y switches.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Cable de Consola', 45)">Añadir al carrito</button>
+            </div>
+
+<!----------------------------     ADAPTADORES     ------------------------------------>
+
+    <div class="tarjeta item-adaptador">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/ADAPTADOR TIPO C HDMI.jfif" alt="Adaptador" >
+                </div>
+                <h3>Adaptador USB-C a HDMI</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Adaptador USB-C a HDMI', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta item-adaptador">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/ADAPTADOR VGA HDMI.jfif" alt="Adaptador" >
+                </div>
+                <h3>Adaptador VGA a HDMI</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Adaptador VGA a HDMI', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta item-adaptador">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/ADAPTADOR VGA.jfif" alt="Adaptador" >
+                </div>
+                <h3>Adaptador duplicador VGA</h3>
+                <p>Permite enviar imagen a dos pantallas a la vez.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Adaptador duplicador VGA', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta item-adaptador">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/cableado/CABLEADO RARO+.jfif" alt="Adaptador" >
+                </div>
+                <h3>Adaptador USB a Paralelo</h3>
+                <p>Conecta impresoras antiguas en ordenadores modernos.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Adaptador USB a Paralelo', 45)">Añadir al carrito</button>
+            </div>
+        </div>
+
+    </section>
+
+<!----------------------------------     AVERIADO     ------------------------------------------>
+
+    <section id="averiado">
+        <h2>Averiado</h2>
+        <div class="grid-productos">
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/tablets/tablet.jfif" alt="Tablet" >
+                </div>
+                <h3>6 Unidades de Tablets Averiadas</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('6 Tablets Averiadas 2', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/averiado/Monitor Averiado 2.jfif" alt="Tablet" >
+                </div>
+                <h3>Monitor Averiado</h3>
+                <p>Tiene líneas quemadas horizontalmente arriba de la pantalla.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Monitor Averiado Lineas', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/averiado/Monitor Averiado.jfif" alt="Tablet" >
+                </div>
+                <h3>Monitor Averiado</h3>
+                <p>Tiene una línea vertical en el medio.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Monitor Averiado Vertical', 45)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+<!----------------------------------     OTROS     ------------------------------------------>
+
+    <section id="otros">
+        <h2>Otros</h2>
+        <div class="grid-productos">
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/SWITCH HDMI.jfif" alt="otros" >
+                </div>
+                <h3>Switch Ladrón HDMI</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Switch HDMI', 45)">Añadir al carrito</button>
+            </div>            
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/conversor 12-240.jfif" alt="otros" >
+                </div>
+                <h3>Transformador de Corriente 12V-240V - 300W</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Conversor 12 a 240', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/fuente de alimentacion.jfif" alt="otros" >
+                </div>
+                <h3>Fuente de Alimentación 500W</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Fuente de Alimentación 500W', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/MICROFONO RARO.jfif" alt="otros" >
+                </div>
+                <h3>Micrófono de Sobremesa para conferencias</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Micrófono de Sobremesa', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/NANO STATION WIFI.jfif" alt="otros" >
+                </div>
+                <h3>Antena Wi-Fi Estation</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Estacion Wifi', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/SAI.jfif" alt="otros" >
+                </div>
+                <h3>SAI Batería de Respaldo</h3>
+                <p>Protege los equipos contra cortes de electricidad.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('SAI', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/CAMARA VIGILANCIA.jfif" alt="otros" >
+                </div>
+                <h3>Cámara de Vigilancia CCTV</h3>
+                <p>Cámara de seguridad para conectar a un grabador.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Cámara de Vigilancia', 45)">Añadir al carrito</button>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/tarjeta de video 2.jfif" alt="otros" >
+                </div>
+                <h3>Tarjeta de Red Wi-Fi TP-Link</h3>
+                <p>Componente interno para dar conexión sin cables a un PC.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Tarjeta Wi-Fi TP-Link', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/tarjeta de video.jfif" alt="otros" >
+                </div>
+                <h3>Tarjeta de Red Ethernet aqprox</h3>
+                <p>Proporciona un puerto RJ45 adicional al ordenador.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Tarjeta de red aqprox', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/tarjeta pci express.jfif" alt="otros" >
+                </div>
+                <h3>Tarjeta PCI Express Paralelo</h3>
+                <p>Añade un puerto de impresora LPT en placas modernas.</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Tarjeta PCI Express Paralelo', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/ventiladores torre.jfif" alt="otros" >
+                </div>
+                <h3>Ventiladores de Ordenador de Sobremesa <br>(5 unidades)</h3>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Pack 5 Ventiladores', 45)">Añadir al carrito</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="contenedor-imagen">
+                    <img src="fts/productos/otros/VIDEO ALGO.jfif" alt="otros" >
+                </div>
+                <h3>Grabador de Cámaras de seguridad (DVR/NVR)</h3>
+                <p>Unidad de grabación para sistemas de videovigilancia (CCTV).</p>
+                <span class="precio">45€</span>
+                <button onclick="añadirAlCarrito('Grabador DVR NVR', 45)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Mercadillo Solidario. Gracias por tu solidaridad.</p>
+        <p>Contacto: mario.bueno@hinojosagroup.com</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
