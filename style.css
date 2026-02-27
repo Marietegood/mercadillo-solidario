@@ -502,98 +502,115 @@ footer {
 }
 
 /* =========================================
-   ADAPTACIÓN EXCLUSIVA PARA MÓVILES
+   DISEÑO MÓVIL: MENÚ COMO ETIQUETAS (FILTROS APP)
    ========================================= */
 @media screen and (max-width: 768px) {
     
-    /* 1. Cabecera ultra-compacta */
-    header {
-        flex-direction: column !important;
-        padding: 0.5rem 0 !important; 
-        gap: 0.5rem !important; 
-    }
-
-    .logo {
-        margin: 0 auto !important;
-        text-align: center !important;
-    }
-
-    .logo img {
-        height: 35px !important; /* Hacemos el logo más pequeñito */
-    }
-
-    /* 2. Menú en una sola línea deslizable y fino */
-    nav {
-        width: 100% !important;
+    /* 1. Usamos Flexbox en la página entera para reordenar los bloques */
+    body {
         display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        gap: 1rem !important; /* Menos espacio entre palabras */
-        padding: 0 1rem 10px 1rem !important;
-        margin-right: 0 !important;
-        scrollbar-width: none; 
-        -webkit-overflow-scrolling: touch;
-    }
-    nav::-webkit-scrollbar { display: none; }
-
-    /* 3. Letras del menú tamaño móvil */
-    nav a {
-        flex-shrink: 0 !important;
-        font-size: 0.85rem !important; /* Letra mucho más fina y elegante */
+        flex-direction: column !important;
     }
 
-    /* 4. Carrito en modo "Burbuja" */
-    .texto-carrito {
+    /* 2. "Rompemos" la cabecera para poder separar el logo del menú */
+    header {
+        display: contents !important; 
+    }
+
+    /* 3. Escondemos el botón de las rayitas para siempre, ya no lo queremos */
+    .btn-menu {
         display: none !important;
     }
 
-    nav a.btn-carrito {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 35px !important;
+    /* 4. EL LOGO (Va el primero de todo, centrado y limpio) */
+    .logo {
+        order: 1 !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding: 15px 0 !important;
+        background-color: white !important;
+        width: 100% !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    }
+    .logo img {
         height: 35px !important;
-        border-radius: 50% !important; /* Círculo perfecto */
+    }
+
+    /* 5. LA FOTO PRINCIPAL (Va la segunda) */
+    .hero-section {
+        order: 2 !important;
+        background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 70%, rgba(255,255,255,0.4) 100%), url('fts/hinojosa.jpg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        padding: 2rem 1.5rem !important;
+        height: auto !important;
+        border-bottom: none !important;
+    }
+    .hero-contenido h1 { font-size: 2.2rem !important; margin-bottom: 10px !important; }
+    .hero-contenido p { font-size: 0.95rem !important; font-weight: 500 !important; color: #222 !important; }
+
+    /* 6. EL MENÚ SÚPER PEQUEÑITO Y CENTRADO (Va el tercero, justo encima de PANTALLAS) */
+    nav {
+        order: 3 !important;
+        display: flex !important;
+        flex-wrap: wrap !important; /* Saltan de línea solas si no caben */
+        justify-content: center !important; /* Centrado perfecto */
+        align-items: center !important;
+        gap: 8px 10px !important; /* Espacio pequeñito entre botones */
+        padding: 20px 15px !important;
+        background-color: white !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Convertimos las palabras en pequeñas "Píldoras" elegantes */
+    nav a {
+        font-size: 0.75rem !important; /* Muy pequeño, como pediste */
+        font-weight: 700 !important;
+        color: #475569 !important; /* Gris oscuro elegante */
+        padding: 6px 12px !important;
+        background-color: #f1f5f9 !important; /* Fondo gris clarito tipo etiqueta */
+        border-radius: 20px !important; /* Botoncitos súper redondos */
+        text-decoration: none !important;
+        letter-spacing: 0.5px !important;
+    }
+    nav a::after { display: none !important; } /* Quitamos las rayitas de subrayado antiguas */
+
+    /* 7. EL CARRITO (Se camufla como un botón redondo más) */
+    .texto-carrito { display: none !important; } /* Ocultamos el texto "Ir al Carrito" */
+    
+    nav a.btn-carrito {
+        background-color: var(--color-primario) !important; /* Tu verde original */
+        color: white !important;
+        font-size: 1.1rem !important; /* Icono del carrito visible */
+        padding: 6px 12px !important;
+        border-radius: 20px !important;
+        margin: 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 1.1rem !important;
     }
 
-    /* 5. Cuadrícula de 2 productos perfecta */
-    .grid-productos {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.5rem !important; /* Menos hueco entre tarjetas */
-        padding: 0 0.5rem !important;
+    /* 8. TODAS LAS SECCIONES DE PRODUCTOS (Van cuartas) */
+    section {
+        order: 4 !important;
     }
 
-    .tarjeta {
-        padding: 0.5rem !important; /* Tarjetas más recogidas */
+    /* 9. EL PIE DE PÁGINA (Va el último) */
+    footer {
+        order: 5 !important;
     }
 
-    .contenedor-imagen {
-        height: 100px !important; /* Fotos adaptadas al móvil */
-        margin-bottom: 0.5rem !important;
-    }
-
-    .tarjeta h3 {
-        font-size: 0.8rem !important; /* Títulos pequeños */
-        margin: 0.2rem 0 !important;
-    }
-
-    /* Ocultamos la descripción en móvil para igualar las tarjetas */
-    .tarjeta p {
-        display: none !important; 
-    }
-
-    .tarjeta .precio {
-        font-size: 1rem !important;
-        margin-bottom: 0.3rem !important;
-        padding-top: 0.2rem !important;
-    }
-
-    .tarjeta button {
-        padding: 0.4rem !important;
-        font-size: 0.75rem !important; /* Botón más estrecho */
-        margin-top: auto !important;
-    }
+    /* --- ADAPTAMOS LAS 2 COLUMNAS DE PRODUCTOS PARA QUE CUADRE TODO --- */
+    .grid-productos { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; padding: 0 10px !important; }
+    .tarjeta { padding: 10px !important; border-radius: 8px !important; }
+    .contenedor-imagen { height: 110px !important; margin-bottom: 8px !important; padding: 5px !important;}
+    .tarjeta h3 { font-size: 0.8rem !important; margin: 5px 0 !important; line-height: 1.2 !important; }
+    .tarjeta p { display: none !important; } /* Ocultamos la descripción para que sean iguales */
+    .tarjeta .precio { font-size: 1rem !important; margin: 5px 0 10px 0 !important; padding: 0 !important;}
+    .tarjeta button { padding: 8px !important; font-size: 0.75rem !important; margin-top: auto !important; border-radius: 6px !important;}
+    
+    section h2 { font-size: 1.5rem !important; margin-bottom: 1.5rem !important; padding-bottom: 1rem !important;}
 }
+
+

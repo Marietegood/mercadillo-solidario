@@ -214,5 +214,13 @@ function filtrarCables(tipo, botonPulsado) {
             item.classList.contains('item-adaptador') ? item.classList.remove('oculto') : item.classList.add('oculto');
         }
     });
+
+    // --- MENÚ HAMBURGUESA PARA VERSIÓN APP (MÓVIL) ---
+    function toggleMenu() {
+    var menu = document.getElementById("menu-principal");
+    menu.classList.toggle("menu-activo");
+    }
+
+    
 }
 window.onload = cargarCarrito;

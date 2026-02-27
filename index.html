@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercadillo Solidario</title>
     <link rel="stylesheet" href="style.css">
-</head><body>
+</head>
+<body>
 
-<!----------------------------------     CABECERA     ------------------------------------------>
     <header>
+        <button class="btn-menu" onclick="toggleMenu()">☰</button>
+
         <a href="index.html" class="logo">
             <img src="fts/Logo.png" alt="Logo de la Empresa">
         </a>            
-        <nav>
-            <a href="#pantallas">PANTALLAS</a>
-            <a href="#impresoras">IMPRESORAS</a>
-            <a href="#pcs">PCS</a>
-            <a href="#perifericos">PERIFÉRICOS</a>
-            <a href="#cableado">CABLEADO Y ADAPTADORES</a>
-            <a href="#averiado">AVERIADO</a>
-            <a href="#otros">OTROS</a>
-            <a href="carrito.html" target="_blank" class="btn-carrito">🛒 <span class="texto-carrito">Ir al Carrito</span></a>        </nav>
-    </header>
-
-<!----------------------------------     SUBMENÚ     ------------------------------------------>
+        
+        <nav id="menu-principal">
+            <a href="#pantallas" onclick="toggleMenu()">PANTALLAS</a>
+            <a href="#impresoras" onclick="toggleMenu()">IMPRESORAS</a>
+            <a href="#pcs" onclick="toggleMenu()">PCS</a>
+            <a href="#perifericos" onclick="toggleMenu()">PERIFÉRICOS</a>
+            <a href="#cableado" onclick="toggleMenu()">CABLEADO Y ADAPTADORES</a>
+            <a href="#averiado" onclick="toggleMenu()">AVERIADO</a>
+            <a href="#otros" onclick="toggleMenu()">OTROS</a>
+            
+            <a href="carrito.html" target="_blank" class="btn-carrito">
+                🛒 <span class="texto-carrito">Ir al Carrito</span>
+            </a>
+        </nav>
+    </header>    
+    
+    <!----------------------------------     SUBMENÚ     ------------------------------------------>
     <section class="hero-section">
         <div class="hero-contenido">
             <h1>
