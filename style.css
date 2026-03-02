@@ -569,55 +569,124 @@ button.btn-menu {
         width: 100% !important;
         margin: 0 !important;
     }
-
-    /* Convertimos las palabras en pequeñas "Píldoras" elegantes */
-    nav a {
-        font-size: 0.75rem !important; /* Muy pequeño, como pediste */
-        font-weight: 700 !important;
-        color: #475569 !important; /* Gris oscuro elegante */
-        padding: 6px 12px !important;
-        background-color: #f1f5f9 !important; /* Fondo gris clarito tipo etiqueta */
-        border-radius: 20px !important; /* Botoncitos súper redondos */
-        text-decoration: none !important;
-        letter-spacing: 0.5px !important;
+/* =========================================
+   DISEÑO MÓVIL: MENÚ ETIQUETAS + BARRA FIJA
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    body {
+        display: flex !important;
+        flex-direction: column !important;
     }
-    nav a::after { display: none !important; } /* Quitamos las rayitas de subrayado antiguas */
 
-    /* 7. EL CARRITO (Se camufla como un botón redondo más) */
-    .texto-carrito { display: none !important; } /* Ocultamos el texto "Ir al Carrito" */
+    header {
+        display: contents !important; 
+    }
+
+    .btn-menu {
+        display: none !important;
+    }
+
+    /* --- 1. BARRA SUPERIOR FIJA (Logo a la izquierda) --- */
+    .logo {
+        order: 1 !important;
+        display: flex !important;
+        justify-content: flex-start !important; /* Logo pegado a la izquierda */
+        align-items: center !important;
+        padding: 0 15px !important;
+        background-color: white !important;
+        width: 100% !important;
+        height: 60px !important; /* Altura de la barra fija */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        
+        /* LA MAGIA PARA QUE SE QUEDE FIJA AL BAJAR */
+        position: sticky !important; 
+        top: 0 !important;
+        z-index: 999 !important; 
+        box-sizing: border-box !important;
+    }
+    .logo img {
+        height: 35px !important;
+    }
+
+    /* --- 2. CARRITO FIJO A LA DERECHA (Sobre la barra del logo) --- */
+    .texto-carrito { display: none !important; }
     
     nav a.btn-carrito {
-        background-color: var(--color-primario) !important; /* Tu verde original */
+        position: fixed !important; /* Se queda clavado en la pantalla */
+        top: 10px !important; /* Centrado verticalmente en la barra de 60px */
+        right: 15px !important; /* Pegado a la derecha */
+        z-index: 1000 !important; /* Por encima de la barra del logo */
+        
+        background-color: var(--color-primario) !important;
         color: white !important;
-        font-size: 1.1rem !important; /* Icono del carrito visible */
-        padding: 6px 12px !important;
-        border-radius: 20px !important;
-        margin: 0 !important;
+        font-size: 1.2rem !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important; /* Círculo perfecto */
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.15) !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* 8. TODAS LAS SECCIONES DE PRODUCTOS (Van cuartas) */
-    section {
-        order: 4 !important;
+    /* --- 3. LA FOTO PRINCIPAL --- */
+    .hero-section {
+        order: 2 !important;
+        background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 70%, rgba(255,255,255,0.4) 100%), url('fts/hinojosa.jpg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        padding: 2rem 1.5rem !important;
+        height: auto !important;
+        border-bottom: none !important;
+    }
+    .hero-contenido h1 { font-size: 2.2rem !important; margin-bottom: 10px !important; }
+    .hero-contenido p { font-size: 0.95rem !important; font-weight: 500 !important; color: #222 !important; }
+
+    /* --- 4. EL MENÚ DE PÍLDORAS --- */
+    nav {
+        order: 3 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px 10px !important;
+        padding: 20px 15px !important;
+        background-color: white !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
 
-    /* 9. EL PIE DE PÁGINA (Va el último) */
-    footer {
-        order: 5 !important;
+    nav a {
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        color: #475569 !important;
+        padding: 8px 14px !important; /* Área táctil un pelín más grande para los dedos */
+        background-color: #f1f5f9 !important;
+        border-radius: 20px !important;
+        text-decoration: none !important;
+        letter-spacing: 0.5px !important;
     }
+    nav a::after { display: none !important; }
 
-    /* --- ADAPTAMOS LAS 2 COLUMNAS DE PRODUCTOS PARA QUE CUADRE TODO --- */
+    /* --- 5. ORDEN DE SECCIONES Y FOOTER --- */
+    section { order: 4 !important; }
+    footer { order: 5 !important; }
+
+    /* --- 6. CUADRÍCULA DE PRODUCTOS --- */
     .grid-productos { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; padding: 0 10px !important; }
     .tarjeta { padding: 10px !important; border-radius: 8px !important; }
     .contenedor-imagen { height: 110px !important; margin-bottom: 8px !important; padding: 5px !important;}
     .tarjeta h3 { font-size: 0.8rem !important; margin: 5px 0 !important; line-height: 1.2 !important; }
-    .tarjeta p { display: none !important; } /* Ocultamos la descripción para que sean iguales */
+    .tarjeta p { display: none !important; }
     .tarjeta .precio { font-size: 1rem !important; margin: 5px 0 10px 0 !important; padding: 0 !important;}
     .tarjeta button { padding: 8px !important; font-size: 0.75rem !important; margin-top: auto !important; border-radius: 6px !important;}
     
     section h2 { font-size: 1.5rem !important; margin-bottom: 1.5rem !important; padding-bottom: 1rem !important;}
+}
 }
 
 
