@@ -20,39 +20,73 @@ body {
     color: var(--color-texto);
 }
 
+/* =========================================
+   SECCIÓN PRINCIPAL: CABECERA (HEADER)
+   ========================================= */
+
+/* =========================================
+   SECCIÓN PRINCIPAL: CABECERA (ESCRITORIO Y TV)
+   ========================================= */
 header {
     background-color: var(--color-blanco);
-    padding: 1rem 5%;
-    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 4%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    gap: 3rem; /* 🛡️ EL ESCUDO: El menú jamás podrá tocar el logo */
     position: sticky; top: 0; z-index: 1000;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
+    flex-wrap: nowrap; 
 }
 
+/* --- IDENTIFICADOR VISUAL (LOGO) --- */
 .logo {
     font-size: 1.5rem; font-weight: bold;
     color: var(--color-primario); text-decoration: none;
 }
 
-/* --- CONTENEDOR DEL MENÚ --- */
+/* --- ÁREA DE ENLACES Y NAVEGACIÓN --- */
 /* --- CONTENEDOR DEL MENÚ --- */
 nav {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Espacio ideal entre las palabras */
-    margin-right: 1.5rem; /* Lo empujamos un poco a la izquierda */
-    flex-wrap: wrap; /* Para que no se rompa en pantallas pequeñas */
+    justify-content: flex-end; /* Empuja el menú hacia la derecha elegantemente */
+    flex-grow: 1; /* Se expande ocupando el espacio, manteniendo el logo a raya */
+    gap: 1.8rem; 
+    margin-right: 0; 
+    flex-wrap: nowrap; 
 }
 
-/* --- ESTILO DE LOS ENLACES --- */
 nav a {
-    text-decoration: none; /* ¡Adiós al subrayado feo por defecto! */
-    color: var(--color-texto); /* Color oscuro elegante */
+    text-decoration: none; 
+    color: var(--color-texto); 
     font-weight: 600;
     font-size: 0.95rem;
-    position: relative; /* Necesario para la animación */
+    position: relative; 
     padding-bottom: 5px;
     transition: color 0.3s ease;
+}
+
+/* =========================================
+   EL TRUCO SENIOR: AJUSTE PARA PORTÁTILES (13" a 15")
+   (Esto va justo debajo del nav, pero encima del móvil)
+   ========================================= */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    header {
+        padding: 1rem 2%; /* Aprovechamos más los bordes del portátil */
+        gap: 1.5rem; 
+    }
+    nav {
+        gap: 1rem; /* Juntamos un pelín las palabras para que quepan */
+    }
+    nav a {
+        font-size: 0.85rem; /* Letra un poco más pequeña y fina */
+    }
+    nav a.btn-carrito {
+        margin-left: 0.5rem; 
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 /* Efecto al pasar el ratón por encima del texto */
